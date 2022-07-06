@@ -22,7 +22,7 @@ Tested on Ubuntu 22.04 LTS.
 
 3. Download the project and change directory to the project folder.
     ```bash
-    git clone [https://github.com/rafaelmoczalla/MapReduceJoinExamples.git](https://github.com/rafaelmoczalla/MapReduceJoinExamples.git)
+    git clone https://github.com/rafaelmoczalla/MapReduceJoinExamples.git
     cd MapReduceJoinExamples
     ```
 
