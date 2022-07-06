@@ -10,12 +10,17 @@ Last Update: 06 July 2022
 Tested on Ubuntu 22.04 LTS.
 
 ## Prerequisites
-1. Install git.
+1. Install git, a java JDK and Docker.
     ```bash
-    sudo apt install gradle default-jdk-headless
+    sudo apt install gradle default-jdk-headless docker-ce
     ```
 
-2. Download the project and change directory to the project folder.
+2. Install Docker Compose.
+    ```bash
+    sudo curl -SL https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+    ```
+
+3. Download the project and change directory to the project folder.
     ```bash
     git clone [https://github.com/rafaelmoczalla/MapReduceJoinExamples.git](https://github.com/rafaelmoczalla/MapReduceJoinExamples.git)
     cd MapReduceJoinExamples
