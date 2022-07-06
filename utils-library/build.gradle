@@ -1,0 +1,32 @@
+apply plugin: "java"
+apply plugin: "java-library"
+
+sourceCompatibility = 1.8
+version = "1.0"
+
+jar {
+    manifest {
+        attributes "Implementation-Title": "Utils Library", "Implementation-Version": version
+    }
+
+    baseName = "Utils-Library"
+    version = "0.1.0"
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    provided
+}
+
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
+}

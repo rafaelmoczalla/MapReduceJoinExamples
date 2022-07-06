@@ -1,0 +1,44 @@
+apply plugin: "java"
+apply plugin: "application"
+
+sourceCompatibility = 1.8
+version = "1.0"
+
+ext {
+    hadoopVersion = "3.2.1"
+}
+
+jar {
+    manifest {
+        attributes "Implementation-Title": "Map Reduce Repartition Join", "Implementation-Version": version
+        attributes "Main-Class": "org.moczalla.joins.repartitionjoin.HadoopDriver"
+    }
+
+    baseName = "HadoopJob"
+    version = "0.1.0"
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    provided
+}
+
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
+}
+
+dependencies {
+    // hadoop lib for driver
+    provided("org.apache.hadoop:hadoop-client:$hadoopVersion")
+    // hadoop common for map/reduce task
+    provided("org.apache.hadoop:hadoop-common:$hadoopVersion")
+}
