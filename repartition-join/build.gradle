@@ -26,19 +26,9 @@ repositories {
     mavenCentral()
 }
 
-configurations {
-    provided
-}
-
-sourceSets {
-    main.compileClasspath += configurations.provided
-    test.compileClasspath += configurations.provided
-    test.runtimeClasspath += configurations.provided
-}
-
 dependencies {
     // hadoop lib for driver
-    provided("org.apache.hadoop:hadoop-client:$hadoopVersion")
+    compileOnly("org.apache.hadoop:hadoop-client:$hadoopVersion")
     // hadoop common for map/reduce task
-    provided("org.apache.hadoop:hadoop-common:$hadoopVersion")
+    compileOnly("org.apache.hadoop:hadoop-common:$hadoopVersion")
 }

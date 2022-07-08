@@ -9,8 +9,8 @@ import org.apache.hadoop.io.*;
 
 public class RepartitionJoinReducer extends MapReduceBase implements Reducer<Text, Text, Text, Text> {
     public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
-        ArrayList<String> s1 = new ArrayList();
-        ArrayList<String> s2 = new ArrayList();
+        ArrayList<String> s1 = new ArrayList<>();
+        ArrayList<String> s2 = new ArrayList<>();
         String[] kv;
 
 

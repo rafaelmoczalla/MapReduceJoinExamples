@@ -5,7 +5,6 @@ import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.io.*;
 
 import java.io.IOException;
-import java.util.*;
 
 public class RepartitionJoinMapperS1 extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
     public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
